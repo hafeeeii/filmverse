@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 1.4vh;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin: 0 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.611);
+  border-radius: 50px;
+}
+
+.closeBtn {
+  visibility: hidden;
+}
+.hamburgerMenu {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  *::-webkit-scrollbar {
+    height: 0;
+  }
+  .closeBtn {
+    display: block;
+  }
+  .hamburgerMenu {
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    inset: 0;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    padding: 5px 0;
+    animation: slideInFromTop 500ms ease;
+  }
+  .closeBtn {
+    visibility: visible;
+    color: black;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 15px;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideToTop {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
